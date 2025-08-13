@@ -56,5 +56,9 @@ while True:
     if cv2.waitKey(50) & 0xFF == ord('q'):
         break
 
+    # Si se cierra la ventana con la X, sale también
+    if cv2.getWindowProperty('prueba detector de direccion', cv2.WND_PROP_VISIBLE) < 1:
+        break
+
 video.release()
 cv2.destroyAllWindows()
